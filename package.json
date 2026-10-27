@@ -1,0 +1,22 @@
+{
+  "name": "turmeric",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "node --test test/lib.test.js",
+    "test:e2e": "vite build && node --test test/e2e.test.js",
+    "icons": "node scripts/icons.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "playwright": "^1.64.1",
+    "svelte": "^5.57.3",
+    "vite": "^8.3.5"
+  },
+  "description": "Chrome/Brave extension for QA teams: the right test login for the exact app, with login history.",
+  "license": "MIT"
+}

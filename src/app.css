@@ -1,0 +1,57 @@
+:root {
+  /* light-dark(light, dark): picked by color-scheme, which follows the Theme setting. */
+  color-scheme: light dark;
+  --bg: light-dark(#fffdf7, #17140f);
+  --panel: light-dark(#ffffff, #211d16);
+  --fg: light-dark(#2b2416, #efe7d6);
+  --muted: light-dark(#6f6450, #a89d86);
+  --line: light-dark(#eadfc6, #3a3326);
+  --hover: light-dark(#fff6e0, #2c261c);
+  --accent: light-dark(#b87700, #f0a92a);
+  --accent-fg: light-dark(#ffffff, #1a1408);
+  --ok: light-dark(#2f7d32, #7fcf83);
+  --ok-bg: light-dark(#e3f3e4, #1f3321);
+  --bad: light-dark(#b3261e, #f2867c);
+  --bad-bg: light-dark(#fbe7e5, #3d1f1c);
+  --warn: light-dark(#8a5300, #f3bf5f);
+  --warn-bg: light-dark(#fff0d6, #3a2d14);
+  --code: light-dark(#f6efe0, #2c261c);
+  --pad: 6px;
+  --page: 1200px;
+  font: 14px/1.45 system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-theme='dark'] { color-scheme: dark; }
+
+:root[data-font='s'] { font-size: 13px; }
+:root[data-font='l'] { font-size: 16px; }
+:root[data-font='xl'] { font-size: 19px; }
+:root[data-width='wide'] { --page: 1600px; }
+:root[data-width='full'] { --page: 100%; }
+:root[data-density='compact'] { --pad: 3px; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+button, input, select {
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 6px;
+  padding: var(--pad) calc(var(--pad) + 4px);
+}
+button { cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+a { color: var(--accent); }
+code { background: var(--code); padding: 0 4px; border-radius: 4px; }
+.muted { color: var(--muted); }
+.badge { font-size: 0.85em; padding: 1px 6px; border-radius: 10px; white-space: nowrap; }
+.badge.success { background: var(--ok-bg); color: var(--ok); }
+.badge.failed { background: var(--bad-bg); color: var(--bad); }
+.badge.ratelimited, .badge.locked { background: var(--warn-bg); color: var(--warn); }
+.badge.none, .badge.unknown { color: var(--muted); border: 1px solid var(--line); }
